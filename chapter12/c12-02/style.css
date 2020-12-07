@@ -7,12 +7,19 @@ body {
 .container {
 	margin: 0 auto 0 auto;
 	padding: 0 16px 0 16px;
-	width: 1000px;
+	max-width: 1000px;
+}
+
+
+
+section .container {
+	display: flex;
+	flex-flow: column;
 }
 
 .header-inner {
 	padding: 10px 10px 0 10px;
-	background: #bad7f5;
+	background: #bad7f5
 }
 
 .nav-inner {
@@ -31,8 +38,13 @@ body {
 	height: 400px;
 }
 
-.sidebar-inner {
+.sidebar1 {
 	padding: 20px 10px 20px 10px;
+	background: #c0f5b9;
+}
+
+.sidebar2 {
+		padding: 20px 10px 20px 10px;
 	background: #c0f5b9;
 }
 
@@ -58,10 +70,22 @@ main p:last-child {
 	margin: 0;
 }
 
-nav {
-	margin-bottom: 20px;
-}
 
-footer {
-	margin-top: 20px;
+
+@media only screen and (min-width: 768px) {
+	section .container {
+		flex-flow: row;
+	}
+	main {
+		flex: 1 1 auto;
+		order: 2;
+	}
+	.sidebar1 {
+		flex: 0 0 200px;
+		order: 1;
+	}
+	.sidebar2 {
+		flex: 0 0 250px;
+		order: 3;
+	}
 }
